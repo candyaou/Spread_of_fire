@@ -15,17 +15,10 @@ public class FireCell
 {
     public static final int Empty = 0, Tree = 1, Fire = 2;
     int status; 
-
-    public FireCell()
-    {   
-        //status = Tree;
-        
-        //status = Empty;
-        Random rand = new Random();
-        int num = rand.nextInt(3);
-       
-        
-        switch (num) {
+    
+    
+   public FireCell(int n){
+         switch (n) {
             case 0:  status = Empty;
                      break;
             case 1:  status = Tree;
@@ -35,8 +28,9 @@ public class FireCell
             default: status = Empty;
                      break;
         }
-        
     }
+    
+   
     
     public int getStatus()
     {

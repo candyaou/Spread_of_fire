@@ -25,7 +25,6 @@ class Fire_OOP extends JFrame
     private static int x;
     private static int y;
     private static int SIZE;
-    private static int time;
     private static FireView view;
     private static FireModel model;
 
@@ -50,23 +49,24 @@ class Fire_OOP extends JFrame
                System.exit(0);
             }
         });
+        /*
+        Scanner hf = new Scanner(System.in);  
+        System.out.print("insert height and width of field :");  
+        String s = hf.nextLine();
+        x = Integer.parseInt(s);
+        y = Integer.parseInt(s);
+        */
         
         
         
        Scanner h = new Scanner(System.in);  
-       System.out.print("insert tree = tree^2: 3-200 :");  
+       System.out.print("insert tree = tree^2: 3-150 :");  
        SIZE = h.nextInt();
-       
-       Scanner a = new Scanner(System.in);  
-       System.out.print("insert time :");  
-       time = a.nextInt();
-       
          // build the model
         model = new FireModel(view,SIZE);
-        //model.solve();
+        model.solve();
         
         sb.setSize(1000,1000);
-        sb.setVisible(true);
-        model.GameTimer(time);
+        sb.show();
     }
 }

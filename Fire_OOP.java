@@ -15,6 +15,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.util.Scanner;  
+
 /*
     this is the Controller component
 */
@@ -25,6 +26,11 @@ class Fire_OOP extends JFrame
     private static int x;
     private static int y;
     private static int SIZE;
+<<<<<<< HEAD
+=======
+    private static int time;
+    private static double prob;
+>>>>>>> origin/master
     private static FireView view;
     private static FireModel model;
 
@@ -62,6 +68,18 @@ class Fire_OOP extends JFrame
        Scanner h = new Scanner(System.in);  
        System.out.print("insert tree = tree^2: 3-150 :");  
        SIZE = h.nextInt();
+<<<<<<< HEAD
+=======
+       
+       Scanner a = new Scanner(System.in);  
+       System.out.print("insert time :");  
+       time = a.nextInt();
+       
+       
+
+       
+       
+>>>>>>> origin/master
          // build the model
         model = new FireModel(view,SIZE);
         model.solve();

@@ -11,7 +11,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.TimerTask;
 import java.util.Timer;
-//import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  *
@@ -22,8 +22,6 @@ import java.util.Timer;
 public class FireModel
 {
     public static int SIZE;
-
-    
     private FireCell[][] myGrid;
     private FireView myView;
     private ArrayList<Integer> tmpburni;
@@ -66,24 +64,38 @@ public class FireModel
         myView.updateView(myGrid);
     }
     
-    public void runQueue(){   
-        System.out.println("runQueue:" + Queue.size());
+    public void runQueue(){
+        
+        //System.out.println("runQueue:" + Queue.size());
         for( int i = 0; i < Queue.size(); i++ ){
             Point tmp = Queue.get(i);
+            
+            if(Math.random()< 0.5){
+            
             fireBurn( new Point( tmp.x, tmp.y - 1 ));
+            }//top
+            if(Math.random()< 0.5){
+            
             fireBurn( new Point( tmp.x + 1, tmp.y ));
+            }//right
+            if(Math.random()< 0.5){
+            
             fireBurn( new Point( tmp.x, tmp.y + 1 ));
+            }//bot
+            if(Math.random()< 0.5){
+            
             fireBurn( new Point( tmp.x - 1, tmp.y )); 
+            }//left
             myGrid[tmp.x][tmp.y].setStatus( FireCell.Empty );
         }
-        System.out.println("tmpQueue.size:" + tmpQueue.size());
+        //System.out.println("tmpQueue.size:" + tmpQueue.size());
         Queue = new ArrayList<>( tmpQueue );
         tmpQueue.clear();
-        System.out.println("Queue.size:" + Queue.size());
+        //System.out.println("Queue.size:" + Queue.size());
         myView.updateView(myGrid);
     }
     public void fireBurn( Point target ){
-        System.out.println("fireBurn:" + myGrid[target.x][target.y].getStatus());
+        //System.out.println("fireBurn:" + myGrid[target.x][target.y].getStatus());
         if( myGrid[target.x][target.y].getStatus() == FireCell.Tree ){
             myGrid[target.x][target.y].setStatus(FireCell.Fire);
             tmpQueue.add(target);

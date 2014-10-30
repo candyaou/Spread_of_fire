@@ -10,6 +10,7 @@ package fire_oop;
  *
  * @author CandyAou
  */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -23,14 +24,11 @@ import java.util.Scanner;
 
 class Fire_OOP extends JFrame
 {
-    private static int x;
-    private static int y;
-    private static int SIZE;
-    private static int time;
-    private static double prob;
+    private static int x,y,SIZE,time,burnTree;
+    public static double prob,probTree;
     private static FireView view;
     private static FireModel model;
-
+    
     Fire_OOP()
     {
         super("Forest Fire");
@@ -56,19 +54,31 @@ class Fire_OOP extends JFrame
         
         
        Scanner h = new Scanner(System.in);  
-       System.out.print("insert tree = tree^2: 3-200 :");  
+       System.out.print("insert tree Max is 175 :");  
        SIZE = h.nextInt();
        
        Scanner a = new Scanner(System.in);  
        System.out.print("insert time :");  
        time = a.nextInt();
        
+       Scanner b = new Scanner(System.in);  
+       System.out.print("insert ProbBurn :");  
+       prob = b.nextDouble();
+       
+       Scanner d = new Scanner(System.in);  
+       System.out.print("insert ProbTree :"); 
+       probTree = d.nextDouble();
+       
+       Scanner c = new Scanner(System.in);  
+       System.out.print("How many tree burn :");  
+       burnTree = c.nextInt();
+       
        
 
        
        
          // build the model
-        model = new FireModel(view,SIZE);
+        model = new FireModel(view,SIZE,burnTree,probTree);
         //model.solve();
         
         sb.setSize(1000,1000);

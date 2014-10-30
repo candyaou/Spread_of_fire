@@ -10,7 +10,7 @@ package fire_oop;
  *
  * @author CandyAou
  */
-import java.util.Random;
+
 public class FireCell
 {
     public static final int Empty = 0, Tree = 1, Fire = 2;

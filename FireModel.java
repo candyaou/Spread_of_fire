@@ -22,19 +22,29 @@ import java.util.Scanner;
 public class FireModel
 {
     public static int SIZE;
+    public static double prob = Fire_OOP.prob;
+    public static int fireRan;
+    public static double fire;
+   
+    
+    private static int burnTree;
+    private static double probTree;
     private FireCell[][] myGrid;
     private FireView myView;
-    private ArrayList<Integer> tmpburni;
-    private ArrayList<Integer> tmpburnj;
-    
+    private ArrayList<Integer> tmpburni,tmpburnj;
     private Point origin;
     private ArrayList<Point> Queue;
     private ArrayList<Point> tmpQueue;
   
     
-    public FireModel(FireView view,int a)
-    {
-        SIZE=a;
+    public FireModel(FireView view,int a,int b,double d)
+    {   
+        
+        
+        SIZE = a;
+        burnTree = b;
+        probTree = d;
+        
         tmpburni=new ArrayList<>();
         tmpburnj=new ArrayList<>();
         myGrid = new FireCell[SIZE][SIZE];
@@ -43,22 +53,37 @@ public class FireModel
         {
             for (int c=0; c<SIZE; c++)
             {
-                myGrid[r][c] = new FireCell(1);
+                
+                if(Math.random() < probTree){
+                    myGrid[r][c] = new FireCell(1);
+                    
+                }
+                else{
+                    myGrid[r][c] = new FireCell(0);
+                    
+                }
             }
         }
         
-        origin = new Point(SIZE/2, SIZE/2 );
         
         Queue = new ArrayList<>();
         tmpQueue = new ArrayList<>();
-        Queue.add(origin);
         
+        for(int i = 0;i < burnTree;i++){
+            fire = Math.random()*SIZE;
+            fireRan = (int)fire;
+            System.out.println("point "+(i+1)+" at : "+fireRan);
+            origin = new Point(fireRan, fireRan );
+            Queue.add(origin);
+            myGrid[fireRan][fireRan].setStatus(2);//new FireCell(2);
+        }
         
-        
-        myGrid[SIZE/2][SIZE/2].setStatus(2);//new FireCell(2);
         //set burn
-        tmpburni.add(SIZE/2);
-        tmpburnj.add(SIZE/2);
+        tmpburni.add(fireRan);
+        tmpburnj.add(fireRan);
+        
+        
+        
         myView = view;
         Border();
         myView.updateView(myGrid);
@@ -70,19 +95,19 @@ public class FireModel
         for( int i = 0; i < Queue.size(); i++ ){
             Point tmp = Queue.get(i);
             
-            if(Math.random()< 0.5){
+            if(Math.random()< prob){
             
             fireBurn( new Point( tmp.x, tmp.y - 1 ));
             }//top
-            if(Math.random()< 0.5){
+            if(Math.random()< prob){
             
             fireBurn( new Point( tmp.x + 1, tmp.y ));
             }//right
-            if(Math.random()< 0.5){
+            if(Math.random()< prob){
             
             fireBurn( new Point( tmp.x, tmp.y + 1 ));
             }//bot
-            if(Math.random()< 0.5){
+            if(Math.random()< prob){
             
             fireBurn( new Point( tmp.x - 1, tmp.y )); 
             }//left
@@ -101,7 +126,6 @@ public class FireModel
             tmpQueue.add(target);
         }
     }
-    
     public void Border(){
         for (int r=0; r<SIZE; r++)
         {
@@ -109,6 +133,7 @@ public class FireModel
             {
               if(r==0||c==0||r==SIZE-1||c==SIZE-1){
                 myGrid[r][c].setStatus(0);
+                
               } 
             }
         }
@@ -172,15 +197,20 @@ public void solve()
         burn();
         myView.updateView(myGrid);
 }
-    */
+*/
+    
+  
+
+    
+    
+    
  
  public void GameTimer(int timeTime) {
    TimerTask task;
         task = new TimerTask() {
             @Override
             public void run() {
-                runQueue();
-                
+                runQueue();                
 //              burn();
 //              myView.updateView(myGrid);
 //              Scanner a = new Scanner(System.in);  
@@ -190,6 +220,7 @@ public void solve()
                 
             }
         };
+        
   Timer timer = new Timer();
   timer.schedule(task,0,timeTime);
  }

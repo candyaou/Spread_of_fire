@@ -148,6 +148,7 @@ public class SpreadOfFire extends javax.swing.JFrame {
         txt1.setText("");
         txt2.setText("");
         txt3.setText("");
+        //reset button
     }                                        
 
  

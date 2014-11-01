@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package fire_oop;
 
@@ -24,19 +20,8 @@ import java.util.Scanner;
 
 class Fire_OOP extends JFrame
 {
-<<<<<<< HEAD
     private static int x,y,SIZE,time,burnTree;
     public static double prob,probTree;
-=======
-    private static int x;
-    private static int y;
-    private static int SIZE;
-<<<<<<< HEAD
-=======
-    private static int time;
-    private static double prob;
->>>>>>> origin/master
->>>>>>> FETCH_HEAD
     private static FireView view;
     private static FireModel model;
     
@@ -61,25 +46,12 @@ class Fire_OOP extends JFrame
                System.exit(0);
             }
         });
-        /*
-        Scanner hf = new Scanner(System.in);  
-        System.out.print("insert height and width of field :");  
-        String s = hf.nextLine();
-        x = Integer.parseInt(s);
-        y = Integer.parseInt(s);
-        */
         
         
         
        Scanner h = new Scanner(System.in);  
-<<<<<<< HEAD
        System.out.print("insert tree Max is 175 :");  
-=======
-       System.out.print("insert tree = tree^2: 3-150 :");  
->>>>>>> FETCH_HEAD
        SIZE = h.nextInt();
-<<<<<<< HEAD
-=======
        
        Scanner a = new Scanner(System.in);  
        System.out.print("insert time :");  
@@ -101,17 +73,12 @@ class Fire_OOP extends JFrame
 
        
        
->>>>>>> origin/master
          // build the model
-<<<<<<< HEAD
         model = new FireModel(view,SIZE,burnTree,probTree);
         //model.solve();
-=======
-        model = new FireModel(view,SIZE);
-        model.solve();
->>>>>>> FETCH_HEAD
         
         sb.setSize(1000,1000);
-        sb.show();
+        sb.setVisible(true);
+        model.GameTimer(time);
     }
 }

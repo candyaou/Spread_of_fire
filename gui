@@ -96,7 +96,7 @@ public class SpreadOfFire extends javax.swing.JFrame {
         txt5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SpreadOfFire");
+        setTitle("Forest Fire");
 
         jLabel1.setText("Insert tree [Max is 175]");
 

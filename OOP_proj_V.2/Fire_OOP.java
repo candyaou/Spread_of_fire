@@ -40,7 +40,7 @@ class Fire_OOP extends JFrame
         jG4.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {  //This event will show popup of Member in G.4
                    JOptionPane.showMessageDialog(null, "54270322    Thanakrit Chirawannaphron\n"
                                                      + "56130500241 Jaruwarin Kanjanakulsitti\n"
                                                      + "56130500251 Paspana Assarasee","Members",
@@ -59,6 +59,8 @@ class Fire_OOP extends JFrame
         j1.add(probcatchin);
         wrap.add(j1);
         
+        
+       // to set the probability of tree
         JPanel j2=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JLabel ja=new JLabel("prob Tree");
         probtreein = new JTextField();
@@ -67,6 +69,8 @@ class Fire_OOP extends JFrame
         j2.add(probtreein);
         wrap.add(j2);
         
+        
+        // to set the size of forest 
         JPanel j4=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JLabel jd=new JLabel("Forest Size");
         treein = new JTextField();
@@ -75,6 +79,8 @@ class Fire_OOP extends JFrame
         j4.add(treein);
         wrap.add(j4);
         
+        
+        //random tree that burn on start program
         JPanel j5=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JLabel je=new JLabel("Many Tree Burn?");
         howin = new JTextField();
@@ -85,7 +91,7 @@ class Fire_OOP extends JFrame
         
         
         
-        
+        //to begin spread of fire
         JPanel j7=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton jstart = new JButton("Start");
         howin.setColumns(6);
@@ -119,7 +125,7 @@ class Fire_OOP extends JFrame
              }
         });
         
-        
+        // to spread of fire step by step
         JPanel j6=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton jstep = new JButton("Step");
         j6.add(jstep);

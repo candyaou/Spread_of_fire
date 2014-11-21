@@ -161,7 +161,7 @@ public class SpreadOfFire extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Desktop\\newTIC\\a1a11.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("https://cloud.githubusercontent.com/assets/8588059/5137852/3ca455c0-7175-11e4-9278-b983393394d3.png")); 
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

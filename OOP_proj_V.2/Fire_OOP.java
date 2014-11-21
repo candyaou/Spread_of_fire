@@ -52,7 +52,7 @@ class Fire_OOP extends JFrame
         
         
         JPanel j1=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JLabel jb=new JLabel("prob Catch");
+        JLabel jb=new JLabel("prob Catch (0.0 - 1) : ");
         probcatchin = new JTextField();
         probcatchin.setColumns(6);
         j1.add(jb);

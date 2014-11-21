@@ -1,5 +1,3 @@
-package fire_oop;
-
 /**
  *
  * @author CandyAou
@@ -35,7 +33,7 @@ class Fire_OOP extends JFrame
         
         
         JPanel j11=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JButton jG4 = new JButton("Group 4");
+        JButton jG4 = new JButton("Group 7");
         j11.add(jG4);
         wrap.add(j11);
         
@@ -165,7 +163,7 @@ class Fire_OOP extends JFrame
         });
         
         JPanel j10=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JButton jhelp = new JButton("MANUAL");
+        JButton jhelp = new JButton("HELP");
         j10.add(jhelp);
         wrap.add(j10);
         
@@ -180,7 +178,7 @@ class Fire_OOP extends JFrame
                                                      + "Start :Click to begin spread of fire\n"
                                                      + "Step  :Click to spread of fire step by step\n"
                                                      + "Stop  :Click to stop \n"
-                                                     + "Reset :Click to reset project","MANUAL",
+                                                     + "Reset :Click to reset project","HELP",
                                                        JOptionPane.INFORMATION_MESSAGE);
                 }
         });

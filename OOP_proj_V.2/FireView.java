@@ -1,5 +1,3 @@
-package fire_oop;
-
 /**
  *
  * @author CandyAou

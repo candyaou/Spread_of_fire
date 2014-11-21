@@ -1,4 +1,4 @@
-//package fire_oop;
+package fire_oop;
 
 /**
  *
@@ -18,7 +18,7 @@ class Fire_OOP extends JFrame
     private static FireView view;
     private static FireModel model;
     private JTextField probcatchin,probtreein,delayin,treein,howin;
-    
+    private double probcatch,probtree;
     Fire_OOP()
     {
         super("Forest Fire");
@@ -69,14 +69,6 @@ class Fire_OOP extends JFrame
         j2.add(probtreein);
         wrap.add(j2);
         
-//        JPanel j3=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-//        JLabel jc=new JLabel("Delay");
-//        delayin = new JTextField();
-//        delayin.setColumns(6);
-//        j3.add(jc);
-//        j3.add(delayin);
-//        wrap.add(j3);
-        
         JPanel j4=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JLabel jd=new JLabel("Forest Size");
         treein = new JTextField();
@@ -105,14 +97,27 @@ class Fire_OOP extends JFrame
         jstart.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                   model.setProbCatch(Double.parseDouble(probcatchin.getText()));
-                   model.setProbTree(Double.parseDouble(probtreein.getText()));
+            public void actionPerformed(ActionEvent e){
+                probcatch = Double.parseDouble(probcatchin.getText());
+                probtree = Double.parseDouble(probtreein.getText());
+                if(probcatch > 0 && probcatch <= 1){
+                   model.setProbCatch(probcatch);
+                }else{
+                    JOptionPane.showMessageDialog(null, "probCatch is only 0-1","ERROR",JOptionPane.INFORMATION_MESSAGE);
+                }
+                if( probtree > 0 &&  probtree <= 1){
+                   model.setProbTree( probtree);
+                }else{
+                    JOptionPane.showMessageDialog(null, "probTreeis only 0-1","ERROR",JOptionPane.INFORMATION_MESSAGE);
+                }
                    model.setSize(Integer.parseInt(treein.getText()));
                    model.setTreeBurn(Integer.parseInt(howin.getText()));
+                   model.time(150);
+                   
                    model.resetBurn();
                    model.startBurn();
-                   model.GameTimer(150);
+                  
+                   
              }
         });
         

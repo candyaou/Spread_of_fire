@@ -1,4 +1,4 @@
-//package fire_oop;
+package fire_oop;
 
 //import java.awt.Color;
 import java.awt.Point;
@@ -19,7 +19,7 @@ public class FireModel
     public static double prob = 1;//Fire_OOP.prob;
     public static int fireRan;
     public static double fire;
-   
+     public static int t;
     
     private static int burnTree;
     private static double probTree;
@@ -29,16 +29,15 @@ public class FireModel
     private Point origin;
     private ArrayList<Point> Queue;
     private ArrayList<Point> tmpQueue;
-    private boolean run=false;
+    private boolean runF=false;
     private Timer timer;
     public FireModel(FireView view,int a,int b,double d)
     {   
         
-        
+       
         SIZE = a;
         burnTree = b;
         probTree = d;
-       
         myView = view;
         build();
         
@@ -48,6 +47,8 @@ public class FireModel
     public void setProbCatch(double p){
         prob = p;
     }
+    
+   
     
      public void setTreeBurn(int p){
         burnTree = p;
@@ -64,7 +65,7 @@ public class FireModel
     
     
     
-    
+    //create forest
     public void build(){
         tmpburni=new ArrayList<>();
         tmpburnj=new ArrayList<>();
@@ -98,6 +99,7 @@ public class FireModel
         tmpburnj.add(myGrid.length/2);
         System.out.println("point 1 at : "+myGrid.length/2);
         burnTree--;
+        
         for(int i = 0;i < burnTree;i++){
             fire = Math.random()*SIZE;
             fireRan = (int)fire;
@@ -108,19 +110,20 @@ public class FireModel
                 myGrid[fireRan][fireRan].setStatus(2);//new FireCell(2);
                 
         }      
-        
-        
-        
         Border();
         myView.updateView(myGrid);
     }
     
     public void startBurn(){
-        run=true;
+        runF=true;
+        
+       
     }
     
+   
+    
     public void stopBurn(){
-        run=false;
+        runF=false;
     }
     
     public void resetBurn(){
@@ -129,7 +132,7 @@ public class FireModel
     
     
     public void runQueue() {
-        
+        //ProbCatch
       
         for( int i = 0; i < Queue.size(); i++ ){
             Point tmp = Queue.get(i);
@@ -167,6 +170,7 @@ public class FireModel
         }
     }
     
+    //make border
     public void Border(){
         for (int r=0; r<SIZE; r++)
         {
@@ -180,19 +184,17 @@ public class FireModel
         }
     }
 
-    
-  
-
- public void GameTimer(int timeTime) {
-   TimerTask task;
-        task = new TimerTask() {
-            @Override
-            public void run() {
-                if(run){runQueue();}                
-            }
-        };
-        
-  Timer timer = new Timer();
-  timer.schedule(task,0,timeTime);
- }   
-}
+     //delay
+     public void time(int timeTime){
+     TimerTask tasknew = new TimerTask() {
+        @Override
+         public void run() {
+              if(runF){runQueue(); }    
+         }
+     } ;
+      Timer timer = new Timer();
+      timer.schedule(tasknew,0,timeTime);      
+   }
+   
+ }
+ 

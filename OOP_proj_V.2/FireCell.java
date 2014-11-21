@@ -1,10 +1,10 @@
-//package fire_oop;
+package fire_oop;
 
 /**
  *
  * @author CandyAou
  */
-
+//create cell 
 public class FireCell
 {
     public static final int Empty = 0, Tree = 1, Fire = 2;
@@ -23,10 +23,7 @@ public class FireCell
                      break;
         }
     }
-    
-   
-    
-    public int getStatus()
+  public int getStatus()
     {
         return status;
     }
@@ -36,4 +33,3 @@ public class FireCell
         status = n;
     }
 }
-

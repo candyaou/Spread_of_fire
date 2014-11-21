@@ -203,7 +203,7 @@ class Fire_OOP extends JFrame
 
 //        model = new FireModel(view,SIZE,burnTree,probTree);
 
-        sb.setSize(1100,1000);
+        sb.setSize(1100,1000); //set size of GUI 1100px*1000px
         sb.setVisible(true);
     }
 }

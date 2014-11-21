@@ -56,7 +56,7 @@ public class FireModel
         SIZE = p;
     }
     
-    public void setProbTree(double p){
+    public void setProbTree(double p){   //to set the probability of tree
         probTree=p;
     }
     
@@ -131,6 +131,7 @@ public class FireModel
     
     public void runQueue() {
         //ProbCatch
+        //ProbCatch = to set the probability of spread of fire (0-1)
       
         for( int i = 0; i < Queue.size(); i++ ){
             Point tmp = Queue.get(i);

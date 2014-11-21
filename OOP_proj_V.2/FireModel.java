@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class FireModel 
 {
     public static int SIZE;
-    public static double prob = 0.7;//Fire_OOP.prob;
+    public static double prob = 1;//Fire_OOP.prob;
     public static int fireRan;
     public static double fire;
    

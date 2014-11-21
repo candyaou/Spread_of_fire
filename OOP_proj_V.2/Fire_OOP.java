@@ -33,6 +33,26 @@ class Fire_OOP extends JFrame
         JPanel wrap=new JPanel();
         wrap.setLayout(new GridLayout(15,1));
         
+        
+        JPanel j11=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        JButton jG4 = new JButton("Group 4");
+        j11.add(jG4);
+        wrap.add(j11);
+        
+        jG4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                   JOptionPane.showMessageDialog(null, "54270322    Thanakrit Chirawannaphron\n"
+                                                     + "56130500241 Jaruwarin Kanjanakulsitti\n"
+                                                     + "56130500251 Paspana Assarasee","Members",
+                                                       JOptionPane.INFORMATION_MESSAGE);
+                                                    
+                }
+        });
+        
+        
+        
         JPanel j1=new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JLabel jb=new JLabel("prob Catch");
         probcatchin = new JTextField();
@@ -93,14 +113,7 @@ class Fire_OOP extends JFrame
                    model.resetBurn();
                    model.startBurn();
                    model.GameTimer(150);
-//                   (new Thread(new Runnable(){
-//                       public void run(){
-//                   model.GameTimer(Integer.parseInt(delayin.getText()));
-//                       
-//                       }
-//                   })).start();
-                   
-                }
+             }
         });
         
         
@@ -145,6 +158,29 @@ class Fire_OOP extends JFrame
                    model.resetBurn();
                 }
         });
+        
+        JPanel j10=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        JButton jhelp = new JButton("MANUAL");
+        j10.add(jhelp);
+        wrap.add(j10);
+        
+        jhelp.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                   JOptionPane.showMessageDialog(null, "prob Catch : to set the probbility of spread of fire(0-1)\n"
+                                                     + "prob Tree  : to set the probbility of tree          (0-1)\n"
+                                                     + "Forest size: to set the size of forest              (3-200)\n"
+                                                     + "Many tree burn : when start how many tree that you want to burn\n"
+                                                     + "Start :Click to begin spread of fire\n"
+                                                     + "Step  :Click to spread of fire step by step\n"
+                                                     + "Stop  :Click to stop \n"
+                                                     + "Reset :Click to reset project","MANUAL",
+                                                       JOptionPane.INFORMATION_MESSAGE);
+                }
+        });
+        
+        
         
         getContentPane().add(wrap, BorderLayout.EAST);
         revalidate();

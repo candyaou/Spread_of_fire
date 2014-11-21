@@ -1,4 +1,4 @@
-//package fire_oop;
+package fire_oop;
 
 /**
  *

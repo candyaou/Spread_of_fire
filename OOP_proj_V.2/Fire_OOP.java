@@ -171,8 +171,8 @@ class Fire_OOP extends JFrame
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                   JOptionPane.showMessageDialog(null, "prob Catch : to set the probbility of spread of fire(0-1)\n"
-                                                     + "prob Tree  : to set the probbility of tree          (0-1)\n"
+                   JOptionPane.showMessageDialog(null, "prob Catch : to set the probability of spread of fire(0-1)\n"
+                                                     + "prob Tree  : to set the probability of tree          (0-1)\n"
                                                      + "Forest size: to set the size of forest              (3-200)\n"
                                                      + "Many tree burn : when start how many tree that you want to burn\n"
                                                      + "Start :Click to begin spread of fire\n"

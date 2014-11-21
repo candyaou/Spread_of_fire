@@ -106,7 +106,7 @@ class Fire_OOP extends JFrame
                 if( probtree > 0 &&  probtree <= 1){
                    model.setProbTree( probtree);
                 }else{
-                    JOptionPane.showMessageDialog(null, "probTreeis only 0-1","ERROR",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "probTree is only 0-1","ERROR",JOptionPane.INFORMATION_MESSAGE);
                 }
                    model.setSize(Integer.parseInt(treein.getText()));
                    model.setTreeBurn(Integer.parseInt(howin.getText()));

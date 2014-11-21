@@ -52,7 +52,7 @@ class Fire_OOP extends JFrame
         
         
         JPanel j1=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JLabel jb=new JLabel("prob Catch (0.0 - 1) : ");
+        JLabel jb=new JLabel("prob Catch (0.0 - 1.0) : ");
         probcatchin = new JTextField();
         probcatchin.setColumns(6);
         j1.add(jb);
@@ -62,7 +62,7 @@ class Fire_OOP extends JFrame
         
        // to set the probability of tree
         JPanel j2=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JLabel ja=new JLabel("prob Tree");
+        JLabel ja=new JLabel("prob Tree (0.0 - 1.0) : ");
         probtreein = new JTextField();
         probtreein.setColumns(6);
         j2.add(ja);
@@ -72,7 +72,7 @@ class Fire_OOP extends JFrame
         
         // to set the size of forest 
         JPanel j4=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JLabel jd=new JLabel("Forest Size");
+        JLabel jd=new JLabel("Forest Size (3 - 200) : ");
         treein = new JTextField();
         treein.setColumns(6);
         j4.add(jd);
